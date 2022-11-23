@@ -2,9 +2,14 @@
 using namespace std;
 
 int n ;
-void solve(){
-}
-void insert(int num[] , int item , int k ){
+void insertInSortedArray(int num[] , int item ){
+    int k ;
+    for(int i = 0 ; i < n ; i++){
+        if(num[i] > item) {
+            k = i ;
+            break ;
+        }
+    }
     for(int j = n ; j >= k ; j--){
         num[j+1] = num[j] ;
     }
@@ -35,15 +40,11 @@ void deleteElement(int a[] ,  int k){
 //      cout << '\n' ;
 // }
 int main(){ 
-    // int t  =  1 ;
-    // cin >>  t ;
-    // while(t--){
-    //       solve() ;
-    // }
+    
     n = 7 ;
-    int arr[n] = {3 , 4 , 1 , 9 , 5 , 6 , 7} ;
-    int item = 2 , k = 3 ;
-    insert(arr , item , k) ;
+    int arr[n] = {2 , 3 , 5 , 7 , 8 , 9 , 10} ;
+    int item = 6 , k = 3;
+    insertInSortedArray(arr , item) ;
     deleteElement(arr , k) ;
 
    // printArray(arr  , n) ;
